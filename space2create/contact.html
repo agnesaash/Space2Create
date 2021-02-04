@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="../dist/aos.css" />
+        <title>Contact Us</title>
+    </head>
+    <body>
+        <div class="contactparts" >
+            <div class="navbar">
+                <ul>
+                    
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="feedbacks.html">Feedbacks</a></li>
+                </ul>
+                </div>
+
+                <div class="cpart1" >
+                    
+                    <div class="formbox" data-aos="fade-right" data-aos-duration="500" >
+                        <form action="contact.html" name="myForm"  id="contact">
+                            <label for="">Your Firstname:</label><br><br>
+                            <input type="text" name="name" id="name" required><br><br>
+                            <label>Your Lastname: </label><br><br>
+                            <input type="text" name="lastname" id="lastname" required><br><br><br>
+                            <label for="">Your Email</label><br><br>
+                            <input type="email" name="email" id="email" required><br><br><br><br>
+                            <textarea id="msg" name="message" placeholder="type your message..."
+                            cols="35"
+                            rows="6"
+                            ></textarea><br>
+                            <button id="submitbutton" onclick="validate()" type="submit">Send Message</button>
+                            
+                        </form>
+                    </div>
+
+                </div>
+                <script src="../dist/aos.js"></script>
+                <script>
+                  AOS.init({
+                    easing: 'ease-in-out-sine'
+                  });
+
+                  function validate() {
+      
+                    if( document.myForm.name.value == "" ){
+                        alert( "Please enter your Firstname!" );
+                        document.myForm.name.focus() ;
+                        return false;
+                    }
+                    if( document.myForm.lastname.value == "" ) {
+                        alert( "Please enter your Lastname!" );
+                        document.myForm.lastname.focus() ;
+                        return false;
+                    }
+                    if( document.myForm.email.value == "" ) {
+                        alert( "Please enter your Email!" );
+                        document.myForm.email.focus() ;
+                        return false;
+                    }
+                    if( document.myForm.message.value == "" ) {
+                        alert( "Please write down the Message!" );
+                        document.myForm.email.focus() ;
+                        return false;
+                    }
+                    return true;
+                  }
+                </script>
+    </body>
+</html>
